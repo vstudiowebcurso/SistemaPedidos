@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using sispedidos.Data;
 using Microsoft.EntityFrameworkCore;
+using sispedidos.web.Helpers;
 
 namespace sispedidos.web
 {
@@ -31,7 +32,12 @@ namespace sispedidos.web
         {
             // Add framework services.
             services.AddDbContext<sispedidosDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("sispedidosConnection")));
-            services.AddMvc();
+            services.AddMvc(
+                options =>
+                {
+                    options.ModelBinderProviders.Insert(0, new MaterialDetalleBinderProvider());
+                }
+                );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

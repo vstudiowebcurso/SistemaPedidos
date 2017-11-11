@@ -10,7 +10,5 @@ namespace sispedidos.web.Models
     {
         public List<Material> Materiales { get; set; }
         public bool ExistenMateriales => Materiales.Count > 0;
-        
-
     }
 }

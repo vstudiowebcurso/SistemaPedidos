@@ -32,7 +32,7 @@ namespace sispedidos.web.Controllers
             return View(ViewModel);
         }
 
-       
+        [Route("Almacen/Editar")]
         public IActionResult Editar(int id)
         {
             return View();

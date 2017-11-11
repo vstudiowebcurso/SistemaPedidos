@@ -27,7 +27,7 @@ namespace sispedidos.Data
         public DbSet<Transportista> Transportistas { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Vendedor> Vendedores { get; set; }
-        public DbSet<Docu> Docus { get; set; } //pedidos
+        public DbSet<Docu> Docus { get; set; }
         public DbSet<Movi> Movis { get; set; }
     }
 }

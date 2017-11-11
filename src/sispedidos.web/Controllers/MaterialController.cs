@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using sispedidos.Data;
 using sispedidos.Negocio;
 using sispedidos.web.Models;
+using sispedidos.Entidades;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -32,7 +33,7 @@ namespace sispedidos.web.Controllers
             return View(ViewModel);
         }
 
-        
+        [Route("Material/Editar")]
         public IActionResult Editar(int id)
         {
             return View();
@@ -43,9 +44,10 @@ namespace sispedidos.web.Controllers
             return View();
         }
 
-        public IActionResult Detalle(int id)
+        [HttpGet("Material/{Id}")]
+        public IActionResult Detalle(MaterialDetalleViewModel model)
         {
-            return View();
+            return View(model);
         }
 
     }

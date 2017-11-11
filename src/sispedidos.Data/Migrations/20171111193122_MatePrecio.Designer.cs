@@ -8,9 +8,10 @@ using sispedidos.Data;
 namespace sispedidos.Data.Migrations
 {
     [DbContext(typeof(sispedidosDbContext))]
-    partial class sispedidosDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171111193122_MatePrecio")]
+    partial class MatePrecio
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
