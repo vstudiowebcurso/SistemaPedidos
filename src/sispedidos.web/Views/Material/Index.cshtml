@@ -1,0 +1,46 @@
+﻿@model sispedidos.web.Models.MaterialViewModel
+
+@{ 
+    ViewData["Title"] = "Materiales";
+}
+
+<h1>
+    Materiales
+</h1>
+
+@if (Model.ExistenMateriales)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Materiales[0].Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Materiales[0].Unidad)
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var material in Model.Materiales)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => material.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => material.Unidad)
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+
+}
+else
+{
+    <p>No existen Materiales</p>
+}

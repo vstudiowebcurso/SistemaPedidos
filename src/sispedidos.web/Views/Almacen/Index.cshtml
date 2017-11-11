@@ -1,0 +1,40 @@
+﻿@model sispedidos.web.Models.AlmacenViewModel
+
+@{
+    ViewData["Title"] = "Almacenes";
+}
+
+<h1>
+    Almacenes
+</h1>
+
+@if (Model.ExistenAlmacenes)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Almacenes[0].Nomalm)
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var almacen in Model.Almacenes)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => almacen.Nomalm)
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+
+}
+else
+{
+    <p>No existen Almacenes</p>
+}

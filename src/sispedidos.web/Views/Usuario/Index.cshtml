@@ -1,0 +1,40 @@
+﻿@model sispedidos.web.Models.UsuarioViewModel
+
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<h1>
+    Usuarios
+</h1>
+
+@if (Model.ExistenUsuarios)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Usuarios[0].NombreUsuario)
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var usuario in Model.Usuarios)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => usuario.NombreUsuario)
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+
+}
+else
+{
+    <p>No existen Usuarios</p>
+}

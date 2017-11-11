@@ -1,0 +1,40 @@
+﻿@model sispedidos.web.Models.ClienteViewModel
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+
+<h1>
+    Clientes
+</h1>
+
+@if (Model.ExistenClientes)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Clientes[0].NombreCliente)
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var cliente in Model.Clientes)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => cliente.NombreCliente)
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+
+}
+else
+{
+    <p>No existen Clientes</p>
+}

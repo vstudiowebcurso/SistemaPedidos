@@ -1,0 +1,40 @@
+﻿@model sispedidos.web.Models.FormapagoViewModel
+
+@{
+    ViewData["Title"] = "Forma de Pago";
+}
+
+<h1>
+    Forma de Pago
+</h1>
+
+@if (Model.ExistenFormapagos)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Formapagos[0].Nombrefpago)
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var formapago in Model.Formapagos)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => formapago.Nombrefpago)
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+
+    </table>
+
+}
+else
+{
+    <p>No existen Formas de Pago</p>
+}
