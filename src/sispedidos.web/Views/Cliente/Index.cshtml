@@ -1,21 +1,30 @@
 ﻿@model sispedidos.web.Models.ClienteViewModel
 
 @{
-    ViewData["Title"] = "Clientes";
+    ViewData["Title"] = "Lista de Clientes";
 }
 
-<h1>
-    Clientes
-</h1>
+@*<h1>
+        Materiales
+    </h1>*@
+
+<h2 class="text-center text-success">Listado de Clientes</h2>
 
 @if (Model.ExistenClientes)
 {
-    <table class="table">
+    <table class="table table-hover table-striped">
         <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Clientes[0].NombreCliente)
-                </th>
+            <tr class="bg-primary">
+                @*<th>
+                        @Html.DisplayNameFor(model => model.Materiales[0].Nombre)
+                    </th>*@
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Departamento</th>
+                <th>Distrito</th>
+                <th>Dirección</th>
+                <th>E-mail</th>
             </tr>
         </thead>
 
@@ -23,9 +32,14 @@
             @foreach (var cliente in Model.Clientes)
             {
                 <tr>
-                    <td>
-                        @Html.DisplayFor(model => cliente.NombreCliente)
-                    </td>
+                    <td>@Html.DisplayFor(model => cliente.CodCliente)</td>
+                    <td>@Html.DisplayFor(model => cliente.NombreCliente)</td>
+                    <td>@Html.DisplayFor(model => cliente.Telefono1)</td>
+                    <td>@Html.DisplayFor(model => cliente.Departamento)</td>
+                    <td>@Html.DisplayFor(model => cliente.Distrito)</td>
+                    <td>@Html.DisplayFor(model => cliente.Direccion)</td>
+                    <td>@Html.DisplayFor(model => cliente.Email)</td>
+                    <td><a class="btn btn-info" href="~/Cliente/@Html.DisplayFor(model => cliente.Id)"><span class="glyphicon glyphicon-edit"></span></a></td>
                 </tr>
 
             }
