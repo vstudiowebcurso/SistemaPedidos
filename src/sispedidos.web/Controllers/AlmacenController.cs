@@ -43,9 +43,10 @@ namespace sispedidos.web.Controllers
             return View();
         }
 
-        public IActionResult Detalle(int id)
+        [HttpGet("Almacen/{Id}")]
+        public IActionResult Detalle(AlmacenDetalleViewModel model)
         {
-            return View();
+            return View(model);
         }
 
     }

@@ -28,6 +28,11 @@ namespace sispedidos.web.Helpers
                 return new BinderTypeModelBinder(typeof(ClienteDetalleBinder));
             }
 
+            if (context.Metadata.ModelType == typeof(AlmacenDetalleViewModel))
+            {
+                return new BinderTypeModelBinder(typeof(AlmacenDetalleBinder));
+            }
+
             return null;
 
         }
